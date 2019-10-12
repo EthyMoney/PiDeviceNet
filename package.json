@@ -1,0 +1,14 @@
+{
+  "name": "pi_device_control",
+  "version": "1.0.0",
+  "description": "This is a package that contains various functionality for operating PWM and i2c devices connected to a raspberry pi over GPIO. These devices used here include pwm relays, pwm VRMs, and i2c LCD displays. I use this primarily for controlling leds and a screen that displays status and menu options.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Logan (YoloSwagDogDiggity)",
+  "license": "MIT",
+  "dependencies": {
+    "rpio": "^1.2.3"
+  }
+}
