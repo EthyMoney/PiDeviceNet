@@ -9,7 +9,7 @@
 |__/     |__/      |_______/ \_______/   \_/   |__/\_______/\_______/      |__/  \__/\_______/  \___/ 
 
 
-Description: My personal bitch to control my LEDs and stuff. This program will have the end goal of communicating
+Description: My personal tool to control my LEDs and stuff. This program will have the end goal of communicating
 with other rPis around my room and managing the flow of commands between them to control devices. For now, this program
 is being used to directly test control of devices, and will later be adapted to pass on this control to other rPis.
 
@@ -40,6 +40,7 @@ rpio.init({
 
 
 // Note: High is OFF, Low is ON!
+// Upon bootup, the setting is LOW!
 
 rpio.open(14, rpio.OUTPUT, rpio.LOW);
 
