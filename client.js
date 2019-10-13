@@ -69,10 +69,10 @@ function relayOFF(){
 }
 
 function ReportStatus(){
-    if(rpio.read(14) === "low"){
+    if(rpio.read(14) === false){
         client.publish('459123459', 'RL1STAT_ON')
     }
-    if(rpio.read(14) === "high"){
+    if(rpio.read(14) === true){
         client.publish('459123459', 'RL1STAT_OFF')
     } 
 }
@@ -82,6 +82,8 @@ function ReportStatus(){
 //##################################################################
 //                       Event Handlers
 //##################################################################
+
+console.log("Client is running and listening for commands! :)");
 
 // For client listening to command publisher: 
 client.on('message', function (topic, message) {

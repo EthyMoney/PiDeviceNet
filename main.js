@@ -32,6 +32,7 @@ var client = mqtt.connect('mqtt://test.mosquitto.org')
 // Connect to public MQTT broker and publish status to other clients.
 client.on('connect', function () {
     client.publish('459123459', 'Server Has Started!');
+    console.log("Host is running and ready to dispatch commands! :)");
     // Listen to responses from clients
     client.subscribe('459123459', function (err) {
         if (err) {
@@ -58,6 +59,7 @@ setTimeout(function () {
 
 client.on('message', function (topic, message) {
     // message is Buffer
+    console.log(message.toString());
     if(message.toString() === "RL1STAT_ON"){
         console.log("RL1 is currently ON");
     }
