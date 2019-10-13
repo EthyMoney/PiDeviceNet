@@ -68,6 +68,15 @@ function relayOFF(){
     rpio.close(14, rpio.PIN_RESET); // Resets to High (OFF)
 }
 
+function ReportStatus(){
+    if(rpio.read(14) === "low"){
+        client.publish('459123459', 'RL1STAT_ON')
+    }
+    if(rpio.read(14) === "high"){
+        client.publish('459123459', 'RL1STAT_OFF')
+    } 
+}
+
 
 
 //##################################################################
@@ -83,6 +92,9 @@ client.on('message', function (topic, message) {
     }
     if(message.toString() === "RL1OFF"){
         relayOFF();
+    }
+    if(message.toString() === "RL1STAT"){
+        ReportStatus();
     }
   })
 

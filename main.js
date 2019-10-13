@@ -27,14 +27,41 @@ Date: 10/12/2019
 process.stdin.resume();
 
 var mqtt = require('mqtt')
-var client  = mqtt.connect('mqtt://test.mosquitto.org')
+var client = mqtt.connect('mqtt://test.mosquitto.org')
 
 // Connect to public MQTT broker and publish status to other clients.
 client.on('connect', function () {
-    client.publish('459123459', 'Server Has Started!')
-  });
+    client.publish('459123459', 'Server Has Started!');
+    // Listen to responses from clients
+    client.subscribe('459123459', function (err) {
+        if (err) {
+            console.log(err);
+        }
+    });
+});
 
-  // Let's try sending a command to our lovely clients after 6 seconds
-  setTimeout(function(){
+// Let's try sending a command to our lovely clients after 6 seconds
+setTimeout(function () {
     client.publish('459123459', 'RL1ON')
-  },6000);
+}, 6000);
+
+// Let's try sending a command to our lovely clients after 12 seconds
+setTimeout(function () {
+    client.publish('459123459', 'RL1OFF')
+}, 12000);
+
+// Let's try sending a command to our lovely clients after 20 seconds
+setTimeout(function () {
+    client.publish('459123459', 'RL1STAT')
+}, 20000);
+
+
+client.on('message', function (topic, message) {
+    // message is Buffer
+    if(message.toString() === "RL1STAT_ON"){
+        console.log("RL1 is currently ON");
+    }
+    if(message.toString() === "RL1STAT_OFF"){
+        console.log("RL1 is currently OFF");
+    }
+});
