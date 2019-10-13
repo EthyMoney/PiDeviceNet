@@ -9,6 +9,7 @@
   "author": "Logan (YoloSwagDogDiggity)",
   "license": "MIT",
   "dependencies": {
+    "mqtt": "^3.0.0",
     "rpio": "^1.2.3"
   }
 }

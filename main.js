@@ -23,35 +23,18 @@ Date: 10/12/2019
 //                    Setup and Declarations
 //##################################################################
 
-var rpio = require('rpio');
+// This will wait for data that never comes, which keeps this process from terminating.
+process.stdin.resume();
 
-rpio.init({
-    gpiomem: true
-}); /* Use /dev/mem for i²c/PWM/SPI */
-rpio.init({
-    mapping: 'gpio'
-}); /* Use the GPIOxx numbering */
+var mqtt = require('mqtt')
+var client  = mqtt.connect('mqtt://test.mosquitto.org')
 
+// Connect to public MQTT broker and publish status to other clients.
+client.on('connect', function () {
+    client.publish('459123459', 'Server Has Started!')
+  });
 
-
-//##################################################################
-//                    Relay Control OVer PWM
-//##################################################################
-
-
-// Note: High is OFF, Low is ON!
-// Upon bootup, the setting is LOW!
-
-rpio.open(14, rpio.OUTPUT, rpio.LOW);
-
-console.log('Pin 14 is currently ' + (rpio.read(14) ? 'high' : 'low'));
-
-setTimeout(function () {
-    //rpio.write(14, rpio.LOW); 
-
-    // Write doesn't seem to be working. Use the reset to shut off instead.
-    rpio.close(14, rpio.PIN_RESET); // Resets to High (OFF)
-
-    console.log('Pin 14 is currently ' + (rpio.read(14) ? 'high' : 'low'));
-
-}, 4000);
+  // Let's try sending a command to our lovely clients after 6 seconds
+  setTimeout(function(){
+    client.publish('459123459', 'RL1ON')
+  },6000);
