@@ -8,6 +8,7 @@
   },
   "author": "Logan (YoloSwagDogDiggity)",
   "license": "MIT",
+  "repository": "https://github.com/YoloSwagDogDiggity/PiNet.git",
   "dependencies": {
     "mqtt": "^3.0.0",
     "rpio": "^1.2.3"
