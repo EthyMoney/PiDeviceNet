@@ -54,7 +54,7 @@ setTimeout(function () {
 // Let's try sending a command to our lovely clients after 20 seconds
 setTimeout(function () {
     client.publish('459123459', 'RL1STAT')
-}, 20000);
+}, 8000);
 
 
 client.on('message', function (topic, message) {
@@ -64,6 +64,6 @@ client.on('message', function (topic, message) {
         console.log("RL1 is currently ON");
     }
     if(message.toString() === "RL1STAT_OFF"){
-        console.log("RL1 is currently OFF");
+        console.log("Status report received: RL1 is currently OFF");
     }
 });
