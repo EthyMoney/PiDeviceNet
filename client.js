@@ -69,12 +69,15 @@ function relayOFF(){
 }
 
 function ReportStatus(){
+    client.publish('459123459', "hello, host? can you hear me??");
+    rpio.mode(14, rpio.INPUT);
     if(rpio.read(14) === false){
         client.publish('459123459', 'RL1STAT_ON')
     }
     if(rpio.read(14) === true){
         client.publish('459123459', 'RL1STAT_OFF')
-    } 
+    }
+    rpio.mode(14, rpio.OUTPUT);
 }
 
 
