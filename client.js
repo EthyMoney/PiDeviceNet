@@ -13,24 +13,46 @@ Description: My personal tool to control my LEDs and stuff. This program will ha
 with other rPis around my room and managing the flow of commands between them to control devices. For now, this program
 is being used to directly test control of devices, and will later be adapted to pass on this control to other rPis.
 
-*** This file is the client that run on the Pis that are distibuted around the home and will listen to commands from the main host Pi over MQTT.
+*** This file is the client that run on the Pis that are distibuted around the home and will listen to commands
+from the main host Pi over MQTT. This file is meant to be rather generic so it can be dropped onto any pi and simply
+change the client #, and then add or remove whatever specific functionality you want that pi to support.
+
 
 Author: Logan (YoloSwagDogDiggity)
-Version: 1.0.0 (InDev)
-Date: 10/12/2019
+Version: 0.1.0 (InDev)
+Started: 10/12/2019
 */
 
 
+
 //##################################################################
-//                    Setup and Declarations
+//                     Setup and Declarations
 //##################################################################
+
+// IMPORTANT!! This defines the client ID number of the program. Set this number for whatever unique pi you put this program onto.
+let clientID = 1;
+
+// IMPORTANT!! These define the pinouts to use for whatever devices you have. Not all of these have to be used, just set the
+// ones you will use with your particuluar client.
+let relay1 = 14;
+let relay2;
+let relay3;
+let i2cLCD;
+let PWMvrm;
+
+/* IMPORTANT!! This value defines the MQTT channel to listen and publish to. It can be a string of your choosing, but make sure 
+it matches your other devices so everything is on the same channel to communicate. WARNING: This channel can be listened 
+and published to by anyone that knows what it is. Be sure to keep this value private if your application controls sensitive
+devices in your use case. Makes for a pretty fun prank to play on a buddy tho ;) */
+let MQTTchannel = "459123459";
+
 
 // This will wait for data that never comes, which keeps this process from terminating.
 process.stdin.resume();
 
 
 var rpio = require('rpio');
-rpio.init({gpiomem: true});
+rpio.init({gpiomem: true});   // You may need to switch this to the devmem pool when using PWM and i2c
 rpio.init({mapping: 'gpio'}); 
 
 
@@ -39,7 +61,7 @@ var client  = mqtt.connect('mqtt://test.mosquitto.org')
 
 // Connect to public MQTT broker and start listening for commands from the host.
 client.on('connect', function () {
-    client.subscribe('459123459', function (err) {
+    client.subscribe(MQTTchannel, function (err) {
         if(err){
             console.log(err);
         }
@@ -52,48 +74,77 @@ client.on('connect', function () {
 
 
 //##################################################################
-//                         Relay Control (In Testing)
+//                         Relay Control
 //##################################################################
 
 // Note: High is OFF, Low is ON!
 // Upon bootup, the setting is LOW! Because of this you will want to default to HIGH (OFF) right away.
 
-function relayON(){
-    //open the pin and close the relay
-    rpio.open(14, rpio.OUTPUT, rpio.LOW); // Sets to Low (ON)
+function relayON(relayID){
+    //open the pin and close the selected relay
+    rpio.open(relayID, rpio.OUTPUT, rpio.LOW); // Sets to Low (ON)
 }
 
-function relayOFF(){
+function relayOFF(relayID){
     //close the pin which resets to the relay being open
-    rpio.close(14, rpio.PIN_RESET); // Resets to High (OFF)
+    rpio.close(relayID, rpio.PIN_RESET); // Resets to High (OFF)
 }
 
+//report the current state of all in-use relays
 function ReportStatus(){
-    console.log('Pin 11 is currently ' + (rpio.read(14) ? 'off' : 'on'));
-    client.publish('459123459', 'RL1STAT_' + (rpio.read(14) ? 'OFF' : 'ON'));
+    client.publish(MQTTchannel, 'RL1STAT_' + (rpio.read(relay1) ? 'OFF' : 'ON'));
 }
 
 
 
 //##################################################################
-//                       Event Handlers
+//                          LCD Control
 //##################################################################
 
-console.log("Client is running and listening for commands! :)");
+// Coming soon!!
+
+
+
+//##################################################################
+//                          VRM Control
+//##################################################################
+
+// Coming soon!!
+
+
+
+//##################################################################
+//                         Event Handlers
+//##################################################################
+
+console.log("Client " + clientID + " is running and listening for commands! :)");
+client.publish(MQTTchannel, 'Client ' + clientID + ' is online!');
 
 // For client listening to command publisher: 
 client.on('message', function (topic, message) {
     // message is Buffer
     console.log(message.toString())
     if(message.toString() === "RL1ON"){
-        relayON();
+        relayON(relay1);
     }
     if(message.toString() === "RL1OFF"){
-        relayOFF();
+        relayOFF(relay1);
     }
     if(message.toString() === "RL1STAT"){
         ReportStatus();
     }
   })
 
+
+
+//##################################################################
+//                      Supporting Functions
+//##################################################################
+
+// These will be here to help complete other tasks or provide validations and testing before running a command.
+
+// TO-DO:
+function validateLCDText(message){
+    // Check a message for being of right length and format prior to sending to the LCD to display. (for a 20x4 char LCD)
+}
 
