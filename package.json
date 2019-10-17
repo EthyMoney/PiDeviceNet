@@ -8,7 +8,7 @@
   },
   "author": "Logan (YoloSwagDogDiggity)",
   "license": "MIT",
-  "repository": "https://github.com/YoloSwagDogDiggity/PiNet.git",
+  "repository": "https://github.com/YoloSwagDogDiggity/PiDeviceNet.git",
   "dependencies": {
     "mqtt": "^3.0.0",
     "rpio": "^1.2.3"
