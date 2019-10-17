@@ -1,0 +1,15 @@
+C:\Users\ultim\Documents\Projects\RoomCommander\bin\Debug\RoomCommander.exe.config
+C:\Users\ultim\Documents\Projects\RoomCommander\bin\Debug\RoomCommander.exe.manifest
+C:\Users\ultim\Documents\Projects\RoomCommander\bin\Debug\RoomCommander.application
+C:\Users\ultim\Documents\Projects\RoomCommander\bin\Debug\RoomCommander.exe
+C:\Users\ultim\Documents\Projects\RoomCommander\bin\Debug\RoomCommander.pdb
+C:\Users\ultim\Documents\Projects\RoomCommander\bin\Debug\M2Mqtt.Net.dll
+C:\Users\ultim\Documents\Projects\RoomCommander\bin\Debug\M2Mqtt.Net.pdb
+C:\Users\ultim\Documents\Projects\RoomCommander\obj\Debug\RoomCommander.Form1.resources
+C:\Users\ultim\Documents\Projects\RoomCommander\obj\Debug\RoomCommander.Properties.Resources.resources
+C:\Users\ultim\Documents\Projects\RoomCommander\obj\Debug\RoomCommander.csproj.GenerateResource.cache
+C:\Users\ultim\Documents\Projects\RoomCommander\obj\Debug\RoomCommander.exe.manifest
+C:\Users\ultim\Documents\Projects\RoomCommander\obj\Debug\RoomCommander.application
+C:\Users\ultim\Documents\Projects\RoomCommander\obj\Debug\RoomCommander.csproj.CopyComplete
+C:\Users\ultim\Documents\Projects\RoomCommander\obj\Debug\RoomCommander.exe
+C:\Users\ultim\Documents\Projects\RoomCommander\obj\Debug\RoomCommander.pdb
