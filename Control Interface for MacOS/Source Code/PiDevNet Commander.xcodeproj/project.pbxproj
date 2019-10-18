@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0282DE062359650100DBF4A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0282DE052359650100DBF4A5 /* AppDelegate.swift */; };
+		0282DE082359650100DBF4A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0282DE072359650100DBF4A5 /* ContentView.swift */; };
+		0282DE0A2359650800DBF4A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0282DE092359650800DBF4A5 /* Assets.xcassets */; };
+		0282DE0D2359650800DBF4A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0282DE0C2359650800DBF4A5 /* Preview Assets.xcassets */; };
+		0282DE102359650800DBF4A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0282DE0E2359650800DBF4A5 /* Main.storyboard */; };
+		B8E25099A7434FCFBDA5CF12 /* Pods_PiDevNet_Commander.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67AD4E15B5AD1FFA1B392499 /* Pods_PiDevNet_Commander.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0282DE022359650100DBF4A5 /* PiDevNet Commander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PiDevNet Commander.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0282DE052359650100DBF4A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0282DE072359650100DBF4A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0282DE092359650800DBF4A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0282DE0C2359650800DBF4A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0282DE0F2359650800DBF4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0282DE112359650800DBF4A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0282DE122359650800DBF4A5 /* PiDevNet_Commander.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PiDevNet_Commander.entitlements; sourceTree = "<group>"; };
+		67AD4E15B5AD1FFA1B392499 /* Pods_PiDevNet_Commander.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PiDevNet_Commander.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78810D66F9314DD2B8B58150 /* Pods-PiDevNet Commander.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiDevNet Commander.debug.xcconfig"; path = "Target Support Files/Pods-PiDevNet Commander/Pods-PiDevNet Commander.debug.xcconfig"; sourceTree = "<group>"; };
+		CD779A4F3165CFC73DE18B6D /* Pods-PiDevNet Commander.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiDevNet Commander.release.xcconfig"; path = "Target Support Files/Pods-PiDevNet Commander/Pods-PiDevNet Commander.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0282DDFF2359650100DBF4A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8E25099A7434FCFBDA5CF12 /* Pods_PiDevNet_Commander.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0282DDF92359650100DBF4A5 = {
+			isa = PBXGroup;
+			children = (
+				0282DE042359650100DBF4A5 /* PiDevNet Commander */,
+				0282DE032359650100DBF4A5 /* Products */,
+				7DCE5EB37776483E25E336E4 /* Pods */,
+				3094A2551A155FD2BD80E7D9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0282DE032359650100DBF4A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0282DE022359650100DBF4A5 /* PiDevNet Commander.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0282DE042359650100DBF4A5 /* PiDevNet Commander */ = {
+			isa = PBXGroup;
+			children = (
+				0282DE052359650100DBF4A5 /* AppDelegate.swift */,
+				0282DE072359650100DBF4A5 /* ContentView.swift */,
+				0282DE092359650800DBF4A5 /* Assets.xcassets */,
+				0282DE0E2359650800DBF4A5 /* Main.storyboard */,
+				0282DE112359650800DBF4A5 /* Info.plist */,
+				0282DE122359650800DBF4A5 /* PiDevNet_Commander.entitlements */,
+				0282DE0B2359650800DBF4A5 /* Preview Content */,
+			);
+			path = "PiDevNet Commander";
+			sourceTree = "<group>";
+		};
+		0282DE0B2359650800DBF4A5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0282DE0C2359650800DBF4A5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3094A2551A155FD2BD80E7D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67AD4E15B5AD1FFA1B392499 /* Pods_PiDevNet_Commander.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DCE5EB37776483E25E336E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78810D66F9314DD2B8B58150 /* Pods-PiDevNet Commander.debug.xcconfig */,
+				CD779A4F3165CFC73DE18B6D /* Pods-PiDevNet Commander.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0282DE012359650100DBF4A5 /* PiDevNet Commander */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0282DE152359650800DBF4A5 /* Build configuration list for PBXNativeTarget "PiDevNet Commander" */;
+			buildPhases = (
+				8E7C57D4415D113BC0EA3FEA /* [CP] Check Pods Manifest.lock */,
+				0282DDFE2359650100DBF4A5 /* Sources */,
+				0282DDFF2359650100DBF4A5 /* Frameworks */,
+				0282DE002359650100DBF4A5 /* Resources */,
+				ED1632A21A0C404A7BDA1FC1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PiDevNet Commander";
+			productName = "PiDevNet Commander";
+			productReference = 0282DE022359650100DBF4A5 /* PiDevNet Commander.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0282DDFA2359650100DBF4A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = Logan;
+				TargetAttributes = {
+					0282DE012359650100DBF4A5 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 0282DDFD2359650100DBF4A5 /* Build configuration list for PBXProject "PiDevNet Commander" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0282DDF92359650100DBF4A5;
+			productRefGroup = 0282DE032359650100DBF4A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0282DE012359650100DBF4A5 /* PiDevNet Commander */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0282DE002359650100DBF4A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0282DE102359650800DBF4A5 /* Main.storyboard in Resources */,
+				0282DE0D2359650800DBF4A5 /* Preview Assets.xcassets in Resources */,
+				0282DE0A2359650800DBF4A5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8E7C57D4415D113BC0EA3FEA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PiDevNet Commander-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED1632A21A0C404A7BDA1FC1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PiDevNet Commander/Pods-PiDevNet Commander-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PiDevNet Commander/Pods-PiDevNet Commander-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PiDevNet Commander/Pods-PiDevNet Commander-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0282DDFE2359650100DBF4A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0282DE082359650100DBF4A5 /* ContentView.swift in Sources */,
+				0282DE062359650100DBF4A5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0282DE0E2359650800DBF4A5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0282DE0F2359650800DBF4A5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0282DE132359650800DBF4A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0282DE142359650800DBF4A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		0282DE162359650800DBF4A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78810D66F9314DD2B8B58150 /* Pods-PiDevNet Commander.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "PiDevNet Commander/PiDevNet_Commander.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"PiDevNet Commander/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "PiDevNet Commander/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "YoloSwagDogDiggity.PiDevNet-Commander";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0282DE172359650800DBF4A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD779A4F3165CFC73DE18B6D /* Pods-PiDevNet Commander.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "PiDevNet Commander/PiDevNet_Commander.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"PiDevNet Commander/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "PiDevNet Commander/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "YoloSwagDogDiggity.PiDevNet-Commander";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0282DDFD2359650100DBF4A5 /* Build configuration list for PBXProject "PiDevNet Commander" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0282DE132359650800DBF4A5 /* Debug */,
+				0282DE142359650800DBF4A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0282DE152359650800DBF4A5 /* Build configuration list for PBXNativeTarget "PiDevNet Commander" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0282DE162359650800DBF4A5 /* Debug */,
+				0282DE172359650800DBF4A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0282DDFA2359650100DBF4A5 /* Project object */;
+}
