@@ -14,6 +14,23 @@ namespace RoomCommander
 {
     public partial class Form1 : Form
     {
+        //
+        //////////////////////////////////////////////////
+        //
+        //
+
+        // Set your MQTT topic here! This topic is where this app
+        // will publish commands and listen for feedback
+
+        private static String MQTT_TOPIC = "459123459"; //change this to yours!
+
+        //
+        //
+        /////////////////////////////////////////////////
+        //
+
+
+
         MqttClient client;
         public Form1()
         {
@@ -22,7 +39,7 @@ namespace RoomCommander
 
         private void button1_Click(object sender, EventArgs e)
         {
-          client.Publish("459123459", // topic
+          client.Publish(MQTT_TOPIC, // topic
           Encoding.UTF8.GetBytes("RL1ON"), // message body
           MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, // QoS level
           true); // retained
@@ -35,20 +52,23 @@ namespace RoomCommander
             client = new MqttClient("test.mosquitto.org");
             byte code = client.Connect(Guid.NewGuid().ToString());
 
-            client.Publish("459123459", // topic
+            client.Publish(MQTT_TOPIC, // topic
             Encoding.UTF8.GetBytes("Windows Commander Interface is online!"), // message body
             MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, // QoS level
             true); // retained
 
-            client.Subscribe(new string[] {"459123459"},
+            client.Subscribe(new string[] { MQTT_TOPIC },
                  new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE});
             
             client.MqttMsgPublishReceived += client_MqttMsgPublishReceived; // Add event handler
+
+            // Attempt to display current initial status
+            sendStatusRequest();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            client.Publish("459123459", // topic
+            client.Publish(MQTT_TOPIC, // topic
             Encoding.UTF8.GetBytes("RL1OFF"), // message body
             MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, // QoS level
             true); // retained
@@ -73,7 +93,7 @@ namespace RoomCommander
 
         void sendStatusRequest()
         {
-            client.Publish("459123459", // topic
+            client.Publish(MQTT_TOPIC, // topic
             Encoding.UTF8.GetBytes("RL1STAT"), // message body
             MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, // QoS level
             true); // retained
