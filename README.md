@@ -9,7 +9,8 @@ As I continue working, I'm realizing that this could potentially be a useful too
 <br/>
 Raspberry Pi models supported:
 
-* Still doing testing to determine compatability (coming soon!)
+* Raspberry Pi Models: A, B (revisions 1.0 and 2.0), A+, B+, 2, 3, 3+, 3 A+, Compute Module 3, Zero, Zero W.
+* Raspberry Pi 4 is **NOT** supported at this time! (There's a memory mapping issue for i2c and pwm access that is present in the BCM base library. This is a known issue and should be solved soon.)
 
 <br/>
 
@@ -19,9 +20,12 @@ Controllable devices currently supported:
 * i2c LCDs (16x2, 16x4, 20x2, 20x4 fully supported!)
 
 <br/>
+
 Devices currently in developement/testing:
+
 * PWM voltage regulators
 * Temperature and humidity sensors (DHT sesnors)
+
 <br/>
 
 More devices and features that are coming soon:
@@ -35,7 +39,6 @@ More devices and features that are coming soon:
 * Voice recognition for commands
 * OpenHab integration for phone control support using Siri and Google Assistant
 * Desktop GUI control program for Windows and Mac
-
 
 <br/>
 These features toward the bottom are further out, but I do plan to add them when I can. My goal is to make this a powerful, yet really easy to use solution that anyone with some raspverry pies can use! Any feedback or requests that you have are appreciated, so please feel free to reach out!
