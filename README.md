@@ -16,9 +16,12 @@ Raspberry Pi models supported:
 Controllable devices currently supported:
 
 * Relays
-* i2c 20x4 LCDs
-* PWM voltage regulators
+* i2c LCDs (16x2, 16x4, 20x2, 20x4 fully supported!)
 
+<br/>
+Devices currently in developement/testing:
+* PWM voltage regulators
+* Temperature and humidity sensors (DHT sesnors)
 <br/>
 
 More devices and features that are coming soon:
@@ -27,7 +30,6 @@ More devices and features that are coming soon:
 * Button and switch input
 * Belkin Wemo device support
 * LED indication output
-* Environmental sensors such as temp and humidity
 * Speakers (good for alarms or notification tones)
 * Proximity sensors
 * Voice recognition for commands
