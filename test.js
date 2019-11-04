@@ -1,5 +1,24 @@
 var rpio = require('rpio');
 
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// What this is: Simple test program to write to an LCD with multiple rows over i2c
+//
+// STATUS: Tested and working!!!!
+//
+// This will work with 16x2, 16x4, 20x2, and 20x4 LCDs! Tested fully to ensure row address compatability!
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// This will wait for data that never comes, which keeps this process from terminating.
+process.stdin.resume();
+
+
 var options = {
         gpiomem: false,
         mapping: 'gpio',
@@ -7,14 +26,13 @@ var options = {
 }
 rpio.init(options);
 
-console.log("YEAH BABY!!!");
+console.log("Writing to LCD!");
 
 /*
- * Magic numbers to initialise the i2c display device and write output,
- * cribbed from various python drivers.
+ * These LCD line addresses will work for 20x4 and 16x4 4-row LCDs, as well as 2-row LCDs
  */
 var init = new Buffer([0x03, 0x03, 0x03, 0x02, 0x28, 0x0c, 0x01, 0x06]);
-var LCD_LINE1 = 0x80, LCD_LINE2 = 0xc0;
+var LCD_LINE1 = 0x80, LCD_LINE2 = 0xc0; LCD_LINE3 = 0x94; LCD_LINE4 = 0xD4; 
 var LCD_ENABLE = 0x04, LCD_BACKLIGHT = 0x08;
 
 /*
@@ -54,7 +72,9 @@ rpio.i2cSetBaudRate(10000);
 for (var i = 0; i < init.length; i++)
         lcdwrite(init[i], 0);
 
-lineout('node.js i2c LCD!', LCD_LINE1);
-lineout('npm install rpio', LCD_LINE2);
+lineout('12345678901234567890', LCD_LINE1);
+lineout('12345678901234567890', LCD_LINE2);
+lineout('12345678901234567890', LCD_LINE3);
+lineout('12345678901234567890', LCD_LINE4);
 
 rpio.i2cEnd();
