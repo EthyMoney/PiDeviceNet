@@ -30,14 +30,13 @@ namespace RoomCommander
         //
 
 
-
         MqttClient client;
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void LedOnButton_Click(object sender, EventArgs e)
         {
           client.Publish(MQTT_TOPIC, // topic
           Encoding.UTF8.GetBytes("RL1ON"), // message body
@@ -48,7 +47,7 @@ namespace RoomCommander
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            label5.Text = " ";
+            ledRelayStatusLabel.Text = " ";
             client = new MqttClient("test.mosquitto.org");
             byte code = client.Connect(Guid.NewGuid().ToString());
 
@@ -66,7 +65,7 @@ namespace RoomCommander
             sendStatusRequest();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void LedOffButton_Click(object sender, EventArgs e)
         {
             client.Publish(MQTT_TOPIC, // topic
             Encoding.UTF8.GetBytes("RL1OFF"), // message body
@@ -75,10 +74,11 @@ namespace RoomCommander
             sendStatusRequest();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void GetLedStatusButton_Click(object sender, EventArgs e)
         {
             sendStatusRequest();
         }
+
         void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             if (Encoding.UTF8.GetString(e.Message).Equals("RL1STAT_ON"))
@@ -101,10 +101,15 @@ namespace RoomCommander
 
         void updateStatusLabel(String status)
         {
-            label5.Invoke(new MethodInvoker(delegate { label5.Text = status; }));
+            ledRelayStatusLabel.Invoke(new MethodInvoker(delegate { ledRelayStatusLabel.Text = status; }));
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(1);
         }

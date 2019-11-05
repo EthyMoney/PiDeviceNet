@@ -31,30 +31,29 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ledRelayStatusLabel = new System.Windows.Forms.Label();
+            this.getStatusButton = new System.Windows.Forms.Button();
+            this.ledOffButton = new System.Windows.Forms.Button();
+            this.ledOnButton = new System.Windows.Forms.Button();
+            this.headerLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.exitButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(116, 82);
+            this.groupBox1.Controls.Add(this.ledRelayStatusLabel);
+            this.groupBox1.Controls.Add(this.getStatusButton);
+            this.groupBox1.Controls.Add(this.ledOffButton);
+            this.groupBox1.Controls.Add(this.ledOnButton);
+            this.groupBox1.Location = new System.Drawing.Point(130, 102);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(429, 230);
+            this.groupBox1.Size = new System.Drawing.Size(483, 288);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LED Lighting Control";
@@ -62,70 +61,70 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(237, 139);
+            this.label6.Location = new System.Drawing.Point(267, 174);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 16);
+            this.label6.Size = new System.Drawing.Size(99, 20);
             this.label6.TabIndex = 4;
             this.label6.Text = "Light Status:";
             // 
-            // label5
+            // ledRelayStatusLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(233, 167);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 32);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "label5";
+            this.ledRelayStatusLabel.AutoSize = true;
+            this.ledRelayStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ledRelayStatusLabel.Location = new System.Drawing.Point(262, 209);
+            this.ledRelayStatusLabel.Name = "ledRelayStatusLabel";
+            this.ledRelayStatusLabel.Size = new System.Drawing.Size(93, 32);
+            this.ledRelayStatusLabel.TabIndex = 3;
+            this.ledRelayStatusLabel.Text = "label5";
             // 
-            // button3
+            // getStatusButton
             // 
-            this.button3.Location = new System.Drawing.Point(260, 44);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(135, 66);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "GET STATUS";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.getStatusButton.Location = new System.Drawing.Point(292, 55);
+            this.getStatusButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.getStatusButton.Name = "getStatusButton";
+            this.getStatusButton.Size = new System.Drawing.Size(152, 82);
+            this.getStatusButton.TabIndex = 2;
+            this.getStatusButton.Text = "GET STATUS";
+            this.getStatusButton.UseVisualStyleBackColor = true;
+            this.getStatusButton.Click += new System.EventHandler(this.GetLedStatusButton_Click);
             // 
-            // button2
+            // ledOffButton
             // 
-            this.button2.Location = new System.Drawing.Point(36, 126);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 66);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "LED OFF";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.ledOffButton.Location = new System.Drawing.Point(40, 158);
+            this.ledOffButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ledOffButton.Name = "ledOffButton";
+            this.ledOffButton.Size = new System.Drawing.Size(152, 82);
+            this.ledOffButton.TabIndex = 1;
+            this.ledOffButton.Text = "LED OFF";
+            this.ledOffButton.UseVisualStyleBackColor = true;
+            this.ledOffButton.Click += new System.EventHandler(this.LedOffButton_Click);
             // 
-            // button1
+            // ledOnButton
             // 
-            this.button1.Location = new System.Drawing.Point(36, 44);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 66);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "LED ON";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ledOnButton.Location = new System.Drawing.Point(40, 55);
+            this.ledOnButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ledOnButton.Name = "ledOnButton";
+            this.ledOnButton.Size = new System.Drawing.Size(152, 82);
+            this.ledOnButton.TabIndex = 0;
+            this.ledOnButton.Text = "LED ON";
+            this.ledOnButton.UseVisualStyleBackColor = true;
+            this.ledOnButton.Click += new System.EventHandler(this.LedOnButton_Click);
             // 
-            // label1
+            // headerLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(62, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(608, 46);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "PiDeviceNet Windows Interface";
+            this.headerLabel.AutoSize = true;
+            this.headerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.headerLabel.Location = new System.Drawing.Point(70, 22);
+            this.headerLabel.Name = "headerLabel";
+            this.headerLabel.Size = new System.Drawing.Size(608, 46);
+            this.headerLabel.TabIndex = 1;
+            this.headerLabel.Text = "PiDeviceNet Windows Interface";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(526, 387);
+            this.label2.Location = new System.Drawing.Point(592, 484);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 29);
             this.label2.TabIndex = 2;
@@ -134,43 +133,32 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(275, 397);
+            this.label3.Location = new System.Drawing.Point(309, 496);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 16);
+            this.label3.Size = new System.Drawing.Size(138, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Powered by MQTT";
             // 
-            // button4
+            // exitButton
             // 
-            this.button4.Location = new System.Drawing.Point(272, 334);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 46);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Shut Down";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(85, 346);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(180, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Use this button to close!";
+            this.exitButton.Location = new System.Drawing.Point(306, 418);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(141, 58);
+            this.exitButton.TabIndex = 5;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 422);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button4);
+            this.ClientSize = new System.Drawing.Size(755, 528);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.headerLabel);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -187,16 +175,15 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label headerLabel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label ledRelayStatusLabel;
+        private System.Windows.Forms.Button getStatusButton;
+        private System.Windows.Forms.Button ledOffButton;
+        private System.Windows.Forms.Button ledOnButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button exitButton;
     }
 }
 
