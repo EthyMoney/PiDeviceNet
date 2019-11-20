@@ -10,7 +10,7 @@ As I continue working, I'm realizing that this could potentially be a useful too
 Raspberry Pi models supported:
 
 * Raspberry Pi Models: A, B (revisions 1.0 and 2.0), A+, B+, 2, 3, 3+, 3 A+, Compute Module 3, Zero, Zero W.
-* Raspberry Pi 4 is **NOT** supported at this time! (There's a memory mapping issue for i2c and pwm access that is present in the BCM base library. This is a known issue and should be solved soon.)
+* Raspberry Pi 4 is **NOT** supported at this time! (There's a memory mapping issue for i2c and pwm access that is present in the BCM base library. This is a known issue and should be resolved by the library owner soon.)
 
 <br/>
 
@@ -25,14 +25,17 @@ Devices currently in developement/testing:
 
 * PWM voltage regulators
 * Temperature and humidity sensors (DHT sesnors)
+* Belkin Wemo device support
 
 <br/>
 
 More devices and features that are coming soon:
 
+* IR transmitters and receivers
+* Motion sensors
+* Graphical user interface for Raspberry Pi
 * More LCD sizes and interface types
 * Button and switch input
-* Belkin Wemo device support
 * LED indication output
 * Speakers (good for alarms or notification tones)
 * Proximity sensors
