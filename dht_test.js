@@ -20,40 +20,35 @@ var sensorLib = require("node-dht-sensor");
 //process.stdin.resume(); //Disabled for now
 
 
-
-let j = schedule.scheduleJob('* * * * *', function(){
-
-    var app = {
-        sensors: [
-          {
+var app = {
+    sensors: [
+        {
             name: "Big Hive",
             type: 11,
             pin: 3
-          },
-          {
+        },
+        {
             name: "Little Hive",
             type: 11,
             pin: 4
-          }
-        ],
-        read: function() {
-          for (var sensor in this.sensors) {
+        }
+    ],
+    read: function () {
+        for (var sensor in this.sensors) {
             var readout = sensorLib.read(
-              this.sensors[sensor].type,
-              this.sensors[sensor].pin
+                this.sensors[sensor].type,
+                this.sensors[sensor].pin
             );
             console.log(
-              `[${this.sensors[sensor].name}] ` +
-                `temperature: ${readout.temperature.toFixed(1)}°C, ` +
+                `[${this.sensors[sensor].name}] ` +
+                `temperature: ${readout.temperature.toFixed(1) * 1.8 + 32}°F, ` +
                 `humidity: ${readout.humidity.toFixed(1)}%`
             );
-          }
-          setTimeout(function() {
-            app.read();
-          }, 2000);
         }
-      };
-       
-      app.read();
+        setTimeout(function () {
+            app.read();
+        }, 30000);
+    }
+};
 
-}); //end of scheduled task
+app.read();
