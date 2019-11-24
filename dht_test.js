@@ -1,7 +1,6 @@
-var rpio = require('rpio');
-var dht = require('dht-sensor');
 const chalk = require('chalk');
 var schedule = require('node-schedule');
+var sensorLib = require("node-dht-sensor");
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -16,38 +15,45 @@ var schedule = require('node-schedule');
 
 
 
-// WARNING: AHHHHHHHHH Still need to add the dht-sensor package for this work!
-
-
 
 // This will wait for data that never comes, which keeps this process from terminating.
 //process.stdin.resume(); //Disabled for now
 
 
 
-var j = schedule.scheduleJob('* * * * *', function(){
+let j = schedule.scheduleJob('* * * * *', function(){
 
-/*
- * Grab current reading from the sensor. (can only do this at 1Hz)
- */
-var current = dht.read(11, 4); // 11 : DHT11, 4 : GPIO Pin Number
-
-// Log the data gathered for checking output
-console.log(chalk.cyan("Humidity: " + chalk.green(current.humidity)));
-console.log(chalk.cyan("Temperature: " + chalk.green(current.temperature*1.8+32)));
-
-// Create space to show other sensor
-console.log(chalk.blue("-------------------------------"));
-
-// Wait a second before reading other sensor
-setTimeout(function(){
-    var current2 = dht.read(11, 3); // 11 : DHT11, 3 : GPIO Pin Number
-
-    // Log the data gathered for checking output
-    console.log(chalk.cyan("Humidity: " + chalk.green(current2.humidity)));
-    console.log(chalk.cyan("Temperature: " + chalk.green(current2.temperature*1.8+32)));
-    
-    console.log(chalk.green("-------------------------------"));
-}, 1000);
+    var app = {
+        sensors: [
+          {
+            name: "Big Hive",
+            type: 11,
+            pin: 3
+          },
+          {
+            name: "Little Hive",
+            type: 11,
+            pin: 4
+          }
+        ],
+        read: function() {
+          for (var sensor in this.sensors) {
+            var readout = sensorLib.read(
+              this.sensors[sensor].type,
+              this.sensors[sensor].pin
+            );
+            console.log(
+              `[${this.sensors[sensor].name}] ` +
+                `temperature: ${readout.temperature.toFixed(1)}°C, ` +
+                `humidity: ${readout.humidity.toFixed(1)}%`
+            );
+          }
+          setTimeout(function() {
+            app.read();
+          }, 2000);
+        }
+      };
+       
+      app.read();
 
 }); //end of scheduled task
