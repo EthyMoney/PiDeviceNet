@@ -13,6 +13,7 @@
     "chalk": "^3.0.0",
     "dht-sensor": "0.0.5",
     "mqtt": "^3.0.0",
+    "node-dht-sensor": "^0.4.0",
     "node-schedule": "^1.3.2",
     "rpio": "^1.3.0"
   }
