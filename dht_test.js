@@ -31,19 +31,23 @@ var j = schedule.scheduleJob('* * * * *', function(){
  * Grab current reading from the sensor. (can only do this at 1Hz)
  */
 var current = dht.read(11, 4); // 11 : DHT11, 4 : GPIO Pin Number
-var current2 = dht.read(11, 3); // 11 : DHT11, 3 : GPIO Pin Number
 
 // Log the data gathered for checking output
 console.log(chalk.cyan("Humidity: " + chalk.green(current.humidity)));
 console.log(chalk.cyan("Temperature: " + chalk.green(current.temperature*1.8+32)));
 
 // Create space to show other sensor
-console.log(chalk.blue("----------OTHER ONE:----------"));
+console.log(chalk.blue("-------------------------------"));
 
-// Log the data gathered for checking output
-console.log(chalk.cyan("Humidity: " + chalk.green(current2.humidity)));
-console.log(chalk.cyan("Temperature: " + chalk.green(current2.temperature*1.8+32)));
+// Wait a second before reading other sensor
+setTimeout(function(){
+    var current2 = dht.read(11, 3); // 11 : DHT11, 3 : GPIO Pin Number
 
-console.log(chalk.green("-------------------------------"));
+    // Log the data gathered for checking output
+    console.log(chalk.cyan("Humidity: " + chalk.green(current2.humidity)));
+    console.log(chalk.cyan("Temperature: " + chalk.green(current2.temperature*1.8+32)));
+    
+    console.log(chalk.green("-------------------------------"));
+}, 1000);
 
 }); //end of scheduled task
