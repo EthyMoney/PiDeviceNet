@@ -9,7 +9,7 @@ var rpio = require('rpio');
 //
 // STATUS: Tested and working!!!!
 //
-// This will work with 16x2, 16x4, 20x2, and 20x4 LCDs! Tested fully to ensure row address compatability!
+// This will work with 16x2, 16x4, 20x2, and 20x4 LCDs! Tested fully to ensure row address compatibility!
 //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -15,7 +15,7 @@ is being used to directly test control of devices, and will later be adapted to 
 
 Author: Logan (YoloSwagDogDiggity)
 Version: 1.0.0 (InDev)
-Date: 10/12/2019
+Start Date: 10/12/2019
 */
 
 
@@ -43,7 +43,7 @@ client.on('connect', function () {
 // Turn both door lights on at 7:30am every morning
 schedule.scheduleJob('30 7 * * 1-5', sendCommand("RL1ON"));  
 schedule.scheduleJob('30 7 * * 1-5', sendCommand("RL2ON"));
-// Turn both door lights off at 2:30am every morning (I'm a night owlß)
+// Turn both door lights off at 2:30am every morning (I'm a night owl)
 schedule.scheduleJob('30 7 * * 1-5', sendCommand("RL1OFF"));  
 schedule.scheduleJob('30 7 * * 1-5', sendCommand("RL2OFF"));
 
