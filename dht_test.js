@@ -18,6 +18,10 @@ var sensorLib = require("node-dht-sensor");
 
 // This will wait for data that never comes, which keeps this process from terminating.
 //process.stdin.resume(); //Disabled for now
+let data1;
+let sensor1;
+let data2;
+let sensor2;
 
 
 var app = {
@@ -34,21 +38,44 @@ var app = {
         }
     ],
     read: function () {
+        let index = 0;
         for (var sensor in this.sensors) {
+            index++;
             var readout = sensorLib.read(
                 this.sensors[sensor].type,
                 this.sensors[sensor].pin
             );
-            console.log(
-                `[${this.sensors[sensor].name}] ` +
-                `temperature: ${readout.temperature.toFixed(1) * 1.8 + 32}°F, ` +
-                `humidity: ${readout.humidity.toFixed(1)}%`
-            );
+            if(index === 1){
+                data1 = readout;
+                sensor1 = sensor;
+            }
+            if(index === 2){
+                data2 = readout;
+                sensor2 = sensor;
+            }
         }
-        setTimeout(function () {
-            app.read();
-        }, 30000);
     }
 };
 
 app.read();
+
+setTimeout(function(){
+    console.log(
+        `[${sensor1.name}] ` +
+        `temperature: ${data1.temperature.toFixed(1) * 1.8 + 32}°F, ` +
+        `humidity: ${data1.humidity.toFixed(1)}%`
+    );
+
+    console.log(
+        `[${sensor2.name}] ` +
+        `temperature: ${data2.temperature.toFixed(1) * 1.8 + 32}°F, ` +
+        `humidity: ${data2.humidity.toFixed(1)}%`
+    );
+}, 10000)
+
+
+// console.log(
+//     `[${this.sensors[sensor].name}] ` +
+//     `temperature: ${readout.temperature.toFixed(1) * 1.8 + 32}°F, ` +
+//     `humidity: ${readout.humidity.toFixed(1)}%`
+// );
