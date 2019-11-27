@@ -41,20 +41,25 @@ client.on('connect', function () {
     });
 });
 
-// Let's try sending a command to our lovely clients after 6 seconds
+// Let's try sending a command to our lovely clients after 5 seconds
 setTimeout(function () {
-    client.publish('459123459', 'RL1ON')
-}, 6000);
+    client.publish('459123459', 'SHTEMP')
+}, 5000);
+
+// Let's try sending a command to our lovely clients after 8 seconds
+setTimeout(function () {
+    client.publish('459123459', 'SHHUMID')
+}, 8000);
 
 // Let's try sending a command to our lovely clients after 12 seconds
 setTimeout(function () {
-    client.publish('459123459', 'RL1OFF')
+    client.publish('459123459', 'BHTEMP')
 }, 12000);
 
-// Let's try sending a command to our lovely clients after 20 seconds
+// Let's try sending a command to our lovely clients after 16 seconds
 setTimeout(function () {
-    client.publish('459123459', 'RL1STAT')
-}, 8000);
+    client.publish('459123459', 'BHTEMP')
+}, 16000);
 
 
 client.on('message', function (topic, message) {
