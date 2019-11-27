@@ -83,39 +83,50 @@ client.publish(MQTTchannel, 'Client ' + clientID + ' is online!');
 client.on('message', function (topic, message) {
     // message is Buffer
     console.log(message.toString())
-    if(message.toString() === "SHTEMP"){
-        sensor.read(11, 4, function(err, temperature, humidity) {
-            if (!err) {
-              client.publish(MQTTchannel, "SHTEMP_" + temperature);
-            }
-            else{client.publish(MQTTchannel, "SHTEMP_ERROR!!!");}
-          });
+    if (message.toString() === "SHTEMP") {
+        sensor.read(11, 4, function (err, temperature, humidity) {
+            setTimeout(function () {
+                if (!err) {
+                    client.publish(MQTTchannel, "SHTEMP_" + temperature);
+                }
+                else { client.publish(MQTTchannel, "SHTEMP_ERROR!!!"); }
+            }, 2500);
+        });
     }
-    if(message.toString() === "BHTEMP"){
-        sensor.read(11, 3, function(err, temperature, humidity) {
-            if (!err) {
-              client.publish(MQTTchannel, "BHTEMP_" + temperature);
-            }
-            else{client.publish(MQTTchannel, "BHTEMP_ERROR!!!");}
-          });
+    if (message.toString() === "BHTEMP") {
+        sensor.read(11, 3, function (err, temperature, humidity) {
+            setTimeout(function () {
+                if (!err) {
+                    client.publish(MQTTchannel, "BHTEMP_" + temperature);
+                }
+                else { client.publish(MQTTchannel, "BHTEMP_ERROR!!!"); }
+            }, 2500);
+
+        });
     }
-    if(message.toString() === "SHHUMID"){
-        sensor.read(11, 4, function(err, temperature, humidity) {
-            if (!err) {
-              client.publish(MQTTchannel, "SHHUMID_" + humidity);
-            }
-            else{client.publish(MQTTchannel, "SHHUMID_ERROR!!!");}
-          });
+    if (message.toString() === "SHHUMID") {
+        sensor.read(11, 4, function (err, temperature, humidity) {
+            setTimeout(function () {
+                if (!err) {
+                    client.publish(MQTTchannel, "SHHUMID_" + humidity);
+                }
+                else { client.publish(MQTTchannel, "SHHUMID_ERROR!!!"); }
+            }, 2500);
+
+        });
     }
-    if(message.toString() === "BHHUMID"){
-        sensor.read(11, 3, function(err, temperature, humidity) {
-            if (!err) {
-              client.publish(MQTTchannel, "BHHUMID_" + humidity);
-            }
-            else{client.publish(MQTTchannel, "BHHUMID_ERROR!!!");}
-          });
+    if (message.toString() === "BHHUMID") {
+        sensor.read(11, 3, function (err, temperature, humidity) {
+            setTimeout(function () {
+                if (!err) {
+                    client.publish(MQTTchannel, "BHHUMID_" + humidity);
+                }
+                else { client.publish(MQTTchannel, "BHHUMID_ERROR!!!"); }
+            }, 2500);
+
+        });
     }
-  })
+})
 
 
 // setTimeout(function () {
