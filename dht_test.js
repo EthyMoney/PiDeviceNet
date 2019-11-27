@@ -88,7 +88,7 @@ client.on('message', function (topic, message) {
             if (!err) {
               client.publish(MQTTchannel, "SHTEMP_" + temperature);
             }
-            else{client.publish(MQTTchannel, "ERROR!!!");}
+            else{client.publish(MQTTchannel, "SHTEMP_ERROR!!!");}
           });
     }
     if(message.toString() === "BHTEMP"){
@@ -96,7 +96,7 @@ client.on('message', function (topic, message) {
             if (!err) {
               client.publish(MQTTchannel, "BHTEMP_" + temperature);
             }
-            else{console.error(err);}
+            else{client.publish(MQTTchannel, "BHTEMP_ERROR!!!");}
           });
     }
     if(message.toString() === "SHHUMID"){
@@ -104,15 +104,15 @@ client.on('message', function (topic, message) {
             if (!err) {
               client.publish(MQTTchannel, "SHHUMID_" + humidity);
             }
-            else{console.error(err);}
+            else{client.publish(MQTTchannel, "SHHUMID_ERROR!!!");}
           });
     }
     if(message.toString() === "BHHUMID"){
-        sensor.read(11, 4, function(err, temperature, humidity) {
+        sensor.read(11, 3, function(err, temperature, humidity) {
             if (!err) {
               client.publish(MQTTchannel, "BHHUMID_" + humidity);
             }
-            else{console.error(err);}
+            else{client.publish(MQTTchannel, "BHHUMID_ERROR!!!");}
           });
     }
   })
