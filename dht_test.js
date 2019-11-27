@@ -88,7 +88,7 @@ client.on('message', function (topic, message) {
             if (!err) {
               client.publish(MQTTchannel, "SHTEMP_" + temperature);
             }
-            else{console.error(err);}
+            else{client.publish(MQTTchannel, "ERROR!!!");}
           });
     }
     if(message.toString() === "BHTEMP"){
