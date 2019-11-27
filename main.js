@@ -58,7 +58,7 @@ setTimeout(function () {
 
 // Let's try sending a command to our lovely clients after 16 seconds
 setTimeout(function () {
-    client.publish('459123459', 'BHTEMP')
+    client.publish('459123459', 'BHHUMID')
 }, 16000);
 
 
