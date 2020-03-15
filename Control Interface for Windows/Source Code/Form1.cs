@@ -62,7 +62,7 @@ namespace RoomCommander
         private void Form1_Load(object sender, EventArgs e)
         {
             mainLabel.Text = " ";
-            client = new MqttClient("test.mosquitto.org");
+            client = new MqttClient("69.178.221.103");
             byte code = client.Connect(Guid.NewGuid().ToString());
 
             client.Publish(MQTT_TOPIC, // topic

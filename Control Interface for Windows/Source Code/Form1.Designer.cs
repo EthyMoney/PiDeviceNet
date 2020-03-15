@@ -45,8 +45,8 @@
             this.bathOnButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lampOffButton = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.lampLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lampOnButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             // 
             this.headerLabel.AutoSize = true;
             this.headerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headerLabel.Location = new System.Drawing.Point(96, 30);
+            this.headerLabel.Location = new System.Drawing.Point(108, 38);
             this.headerLabel.Name = "headerLabel";
             this.headerLabel.Size = new System.Drawing.Size(608, 46);
             this.headerLabel.TabIndex = 1;
@@ -70,17 +70,17 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(656, 535);
+            this.label2.Location = new System.Drawing.Point(738, 669);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 29);
             this.label2.TabIndex = 2;
-            this.label2.Text = "2019 v1.1.0";
+            this.label2.Text = "2020 v1.1.1";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 544);
+            this.label3.Location = new System.Drawing.Point(14, 680);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(226, 20);
             this.label3.TabIndex = 3;
@@ -88,10 +88,10 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(336, 497);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(4);
+            this.exitButton.Location = new System.Drawing.Point(378, 621);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(125, 46);
+            this.exitButton.Size = new System.Drawing.Size(141, 58);
             this.exitButton.TabIndex = 5;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -100,19 +100,21 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.bathOffButton);
-            this.groupBox3.Location = new System.Drawing.Point(251, 51);
+            this.groupBox3.Location = new System.Drawing.Point(282, 64);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(192, 293);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Size = new System.Drawing.Size(216, 366);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bathroom  Door";
             // 
             // bathOffButton
             // 
-            this.bathOffButton.Location = new System.Drawing.Point(29, 90);
+            this.bathOffButton.Location = new System.Drawing.Point(33, 112);
             this.bathOffButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bathOffButton.Name = "bathOffButton";
-            this.bathOffButton.Size = new System.Drawing.Size(135, 53);
+            this.bathOffButton.Size = new System.Drawing.Size(152, 66);
             this.bathOffButton.TabIndex = 1;
             this.bathOffButton.Text = "OFF";
             this.bathOffButton.UseVisualStyleBackColor = true;
@@ -121,19 +123,21 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.mainOffButton);
-            this.groupBox2.Location = new System.Drawing.Point(36, 51);
+            this.groupBox2.Location = new System.Drawing.Point(40, 64);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(192, 293);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Size = new System.Drawing.Size(216, 366);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Main Door";
             // 
             // mainOffButton
             // 
-            this.mainOffButton.Location = new System.Drawing.Point(29, 90);
+            this.mainOffButton.Location = new System.Drawing.Point(33, 112);
             this.mainOffButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mainOffButton.Name = "mainOffButton";
-            this.mainOffButton.Size = new System.Drawing.Size(135, 53);
+            this.mainOffButton.Size = new System.Drawing.Size(152, 66);
             this.mainOffButton.TabIndex = 1;
             this.mainOffButton.Text = "OFF";
             this.mainOffButton.UseVisualStyleBackColor = true;
@@ -142,9 +146,9 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(83, 249);
+            this.label6.Location = new System.Drawing.Point(93, 311);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 16);
+            this.label6.Size = new System.Drawing.Size(60, 20);
             this.label6.TabIndex = 4;
             this.label6.Text = "Status:";
             // 
@@ -152,18 +156,18 @@
             // 
             this.mainLabel.AutoSize = true;
             this.mainLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainLabel.Location = new System.Drawing.Point(80, 286);
+            this.mainLabel.Location = new System.Drawing.Point(90, 358);
             this.mainLabel.Name = "mainLabel";
-            this.mainLabel.Size = new System.Drawing.Size(93, 32);
+            this.mainLabel.Size = new System.Drawing.Size(147, 32);
             this.mainLabel.TabIndex = 3;
-            this.mainLabel.Text = "label5";
+            this.mainLabel.Text = "Link Down";
             // 
             // mainOnButton
             // 
-            this.mainOnButton.Location = new System.Drawing.Point(65, 80);
+            this.mainOnButton.Location = new System.Drawing.Point(73, 100);
             this.mainOnButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mainOnButton.Name = "mainOnButton";
-            this.mainOnButton.Size = new System.Drawing.Size(135, 54);
+            this.mainOnButton.Size = new System.Drawing.Size(152, 68);
             this.mainOnButton.TabIndex = 0;
             this.mainOnButton.Text = "ON";
             this.mainOnButton.UseVisualStyleBackColor = true;
@@ -172,9 +176,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(300, 249);
+            this.label4.Location = new System.Drawing.Point(338, 311);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 16);
+            this.label4.Size = new System.Drawing.Size(60, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "Status:";
             // 
@@ -182,18 +186,18 @@
             // 
             this.bathroomLabel.AutoSize = true;
             this.bathroomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bathroomLabel.Location = new System.Drawing.Point(297, 286);
+            this.bathroomLabel.Location = new System.Drawing.Point(334, 358);
             this.bathroomLabel.Name = "bathroomLabel";
-            this.bathroomLabel.Size = new System.Drawing.Size(93, 32);
+            this.bathroomLabel.Size = new System.Drawing.Size(147, 32);
             this.bathroomLabel.TabIndex = 6;
-            this.bathroomLabel.Text = "label5";
+            this.bathroomLabel.Text = "Link Down";
             // 
             // bathOnButton
             // 
-            this.bathOnButton.Location = new System.Drawing.Point(280, 80);
+            this.bathOnButton.Location = new System.Drawing.Point(315, 100);
             this.bathOnButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bathOnButton.Name = "bathOnButton";
-            this.bathOnButton.Size = new System.Drawing.Size(135, 54);
+            this.bathOnButton.Size = new System.Drawing.Size(152, 68);
             this.bathOnButton.TabIndex = 4;
             this.bathOnButton.Text = "ON";
             this.bathOnButton.UseVisualStyleBackColor = true;
@@ -203,49 +207,51 @@
             // 
             this.groupBox4.Controls.Add(this.lampOffButton);
             this.groupBox4.Controls.Add(this.lampLabel);
-            this.groupBox4.Location = new System.Drawing.Point(465, 51);
+            this.groupBox4.Location = new System.Drawing.Point(523, 64);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(192, 293);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox4.Size = new System.Drawing.Size(216, 366);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Lamp";
             // 
             // lampOffButton
             // 
-            this.lampOffButton.Location = new System.Drawing.Point(29, 90);
+            this.lampOffButton.Location = new System.Drawing.Point(33, 112);
             this.lampOffButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lampOffButton.Name = "lampOffButton";
-            this.lampOffButton.Size = new System.Drawing.Size(135, 53);
+            this.lampOffButton.Size = new System.Drawing.Size(152, 66);
             this.lampOffButton.TabIndex = 1;
             this.lampOffButton.Text = "OFF";
             this.lampOffButton.UseVisualStyleBackColor = true;
             this.lampOffButton.Click += new System.EventHandler(this.lampOffButton_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(514, 249);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 16);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Status:";
-            // 
             // lampLabel
             // 
             this.lampLabel.AutoSize = true;
             this.lampLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lampLabel.Location = new System.Drawing.Point(25, 235);
+            this.lampLabel.Location = new System.Drawing.Point(6, 304);
             this.lampLabel.Name = "lampLabel";
-            this.lampLabel.Size = new System.Drawing.Size(146, 20);
+            this.lampLabel.Size = new System.Drawing.Size(188, 20);
             this.lampLabel.TabIndex = 10;
-            this.lampLabel.Text = "Not Supported Yet!";
+            this.lampLabel.Text = "Status not yet supported!";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(578, 311);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 20);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Status:";
             // 
             // lampOnButton
             // 
-            this.lampOnButton.Location = new System.Drawing.Point(494, 80);
+            this.lampOnButton.Location = new System.Drawing.Point(556, 100);
             this.lampOnButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lampOnButton.Name = "lampOnButton";
-            this.lampOnButton.Size = new System.Drawing.Size(135, 54);
+            this.lampOnButton.Size = new System.Drawing.Size(152, 68);
             this.lampOnButton.TabIndex = 8;
             this.lampOnButton.Text = "ON";
             this.lampOnButton.UseVisualStyleBackColor = true;
@@ -264,11 +270,11 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Location = new System.Drawing.Point(56, 90);
+            this.groupBox1.Location = new System.Drawing.Point(63, 112);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(691, 382);
+            this.groupBox1.Size = new System.Drawing.Size(777, 478);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Room Lighting Control";
@@ -277,7 +283,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(704, 497);
+            this.label1.Location = new System.Drawing.Point(792, 621);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 29);
             this.label1.TabIndex = 6;
@@ -285,9 +291,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 574);
+            this.ClientSize = new System.Drawing.Size(901, 718);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.label3);

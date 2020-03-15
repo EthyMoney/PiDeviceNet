@@ -19,7 +19,7 @@ change the client #, and then add or remove whatever specific functionality you 
 
 
 Author: Logan (YoloSwagDogDiggity)
-Version: 0.1.0 (InDev)
+Version: 0.2.0 (InDev)
 Started: 10/12/2019
 */
 
@@ -38,14 +38,14 @@ let relay1 = 14;
 let relay2;
 let relay3;
 let i2cLCD;
-let PWMvrm;
+let PWMvrm = 'P1-12'
 
 /* IMPORTANT!! This value defines the MQTT channel to listen and publish to. It can be a string of your choosing, but make sure 
 it matches your other devices so everything is on the same channel to communicate. WARNING: This channel can be listened 
 and published to by anyone that knows what it is. Be sure to keep this value private if your application controls sensitive
 devices in your use case. Makes for a pretty fun prank to play on a buddy tho ;) */
 let MQTTchannel = "459123459";
-
+let PWMtopic = `${MQTTchannel}` + _PWM_ + `${clientID}`;
 
 // This will wait for data that never comes, which keeps this process from terminating.
 process.stdin.resume();
@@ -54,22 +54,23 @@ process.stdin.resume();
 var rpio = require('rpio');
 rpio.init({gpiomem: true});   // You may need to switch this to the devmem pool when using PWM and i2c
 rpio.init({mapping: 'gpio'}); 
-
+const raspi = require('raspi');
+const pwm = require('raspi-pwm');
 
 var mqtt = require('mqtt')
-var client  = mqtt.connect('mqtt://test.mosquitto.org')
+var client = mqtt.connect('192.168.1.28')
 
 // Connect to public MQTT broker and start listening for commands from the host.
 client.on('connect', function () {
-    client.subscribe(MQTTchannel, function (err) {
+    client.subscribe([MQTTchannel,PWMtopic] , function (err) {
         if(err){
             console.log(err);
         }
     })
   })
 
-  // Set relay to OFF right away upon startup.
-  //relayOFF();
+// Set relay to OFF right away upon startup.
+relayOFF();
 
 
 
@@ -91,8 +92,8 @@ function relayOFF(relayID){
 }
 
 //report the current state of all in-use relays
-function ReportStatus(){
-    client.publish(MQTTchannel, 'RL1STAT_' + (rpio.read(relay1) ? 'OFF' : 'ON'));
+function reportStatus(){
+    client.publish(MQTTchannel, `RL${clientID}STAT_` + (rpio.read(relay1) ? 'OFF' : 'ON'));
 }
 
 
@@ -109,7 +110,12 @@ function ReportStatus(){
 //                          VRM Control
 //##################################################################
 
-// Coming soon!!
+function setDutyCycle(duty){
+    raspi.init(() => {
+        const led = new pwm.PWM(PWMvrm, 2500); // GPIO pin 12, 2.5 KHz PWM frequency
+        led.write(duty);
+      });
+}
 
 
 
@@ -117,21 +123,24 @@ function ReportStatus(){
 //                         Event Handlers
 //##################################################################
 
-console.log("Client " + clientID + " is running and listening for commands! :)");
-client.publish(MQTTchannel, 'Client ' + clientID + ' is online!');
+console.log(`Client ${clientID} is running and listening for commands! :)`);
+client.publish(MQTTchannel, `Client ${clientID} is online!`);
 
 // For client listening to command publisher: 
 client.on('message', function (topic, message) {
     // message is Buffer
     console.log(message.toString())
-    if(message.toString() === "RL1ON"){
+    if(message.toString() === `RL${clientID}ON`){
         relayON(relay1);
     }
-    if(message.toString() === "RL1OFF"){
+    if(message.toString() === `RL${clientID}OFF`){
         relayOFF(relay1);
     }
-    if(message.toString() === "RL1STAT"){
-        ReportStatus();
+    if(message.toString() === `RL${clientID}STAT`){
+        reportStatus();
+    }
+    if(topic.toString() === PWMtopic){
+        setDutyCycle(parseFloat(message.toString()));
     }
   })
 
