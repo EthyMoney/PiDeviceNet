@@ -38,7 +38,7 @@ let relay1 = 14;
 let relay2;
 let relay3;
 let i2cLCD;
-let PWMvrm = 'P1-12'
+let PWMvrm = 'GPIO12'
 
 /* IMPORTANT!! This value defines the MQTT channel to listen and publish to. It can be a string of your choosing, but make sure 
 it matches your other devices so everything is on the same channel to communicate. WARNING: This channel can be listened 
