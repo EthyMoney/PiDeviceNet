@@ -45,7 +45,7 @@ it matches your other devices so everything is on the same channel to communicat
 and published to by anyone that knows what it is. Be sure to keep this value private if your application controls sensitive
 devices in your use case. Makes for a pretty fun prank to play on a buddy tho ;) */
 let MQTTchannel = "459123459";
-let PWMtopic = `${MQTTchannel}` + _PWM_ + `${clientID}`;
+let PWMtopic = `${MQTTchannel}_PWM_${clientID}`;
 
 // This will wait for data that never comes, which keeps this process from terminating.
 process.stdin.resume();
@@ -58,7 +58,7 @@ const raspi = require('raspi');
 const pwm = require('raspi-pwm');
 
 var mqtt = require('mqtt')
-var client = mqtt.connect('192.168.1.28')
+var client = mqtt.connect('mqtt://192.168.1.28')
 
 // Connect to public MQTT broker and start listening for commands from the host.
 client.on('connect', function () {
@@ -70,7 +70,7 @@ client.on('connect', function () {
   })
 
 // Set relay to OFF right away upon startup.
-relayOFF();
+relayOFF(relay1);
 
 
 
@@ -112,7 +112,7 @@ function reportStatus(){
 
 function setDutyCycle(duty){
     raspi.init(() => {
-        const led = new pwm.PWM(PWMvrm, 2500); // GPIO pin 12, 2.5 KHz PWM frequency
+        const led = new pwm.PWM({'pin': PWMvrm, 'frequency': 2500}); // GPIO pin 12, 2.5 KHz PWM frequency
         led.write(duty);
       });
 }
