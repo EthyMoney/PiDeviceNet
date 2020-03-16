@@ -1,0 +1,43 @@
+// Bathroom Door Light Proxy Exchange
+rule "BathroomDoorLightHomeKit"
+when
+    Item BathroomDoor received command
+then
+    if (receivedCommand == OFF) {
+        BathroomDoorProxy.sendCommand(0)
+    } else if (receivedCommand != ON) {
+        BathroomDoorProxy.sendCommand(receivedCommand)
+    }
+end
+
+
+
+// Bathroom Door ON Event
+rule "BathroomDoorON"
+when 
+    Item BathroomDoor changed from 0 to 100
+then
+    BathroomDoorProxy.sendCommand(100)
+end
+
+
+// Main Door Light Proxy Exchange
+rule "MainDoorLightHomeKit"
+when
+    Item RoomLighting received command
+then
+    if (receivedCommand == OFF) {
+        MainDoorProxy.sendCommand(0)
+    } else if (receivedCommand != ON) {
+        MainDoorProxy.sendCommand(receivedCommand)
+    }
+end
+
+
+// Main Door ON Event
+rule "MainDoorON"
+when 
+    Item RoomLighting changed from 0 to 100
+then
+    MainDoorProxy.sendCommand(100)
+end
