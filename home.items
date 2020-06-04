@@ -1,0 +1,8 @@
+Dimmer BathroomDoor "Bathroom Door" <light> (bLights) [ "Lighting" ]
+Dimmer RoomLighting "Main Door" <light> (mLights) [ "Lighting" ]
+Switch Lamp "Lamp" <light> (gLamp) [ "Lighting" ]
+Switch Fan "Fan" <switch> (gFan) [ "Switchable" ]
+Number BathroomTemperature "Bathroom Temperature" (gBathroom) [ "TemperatureSensor" ]
+Number BathroomHumidity "Bathroom Humidity" (gBathroomH) [ "CurrentHumidity" ]
+Number BedroomTemperature "Bedroom Temperature" (gBedroom) [ "TemperatureSensor" ]
+Number BedroomHumidity "Bedroom Humidity" (gBedroomH) [ "CurrentHumidity" ]
