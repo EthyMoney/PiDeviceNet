@@ -30,7 +30,7 @@ let clientID = 'soup3';
 
 // IMPORTANT!! These define the pinouts to use for whatever devices you have. Not all of these have to be used, just set the
 // ones you will use with your particuluar client.
-let relay1 = 14;
+let relay1 = 4;
 
 /* IMPORTANT!! This value defines the MQTT channel to listen and publish to. It can be a string of your choosing, but make sure 
 it matches your other devices so everything is on the same channel to communicate. WARNING: This channel can be listened 
