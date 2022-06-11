@@ -1,1 +1,0 @@
-Extract the zip folder and run the RoomCommander.exe program. .NET Framework 4.7.2 or newer is required to run this program correctly!
