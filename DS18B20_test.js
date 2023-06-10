@@ -4,10 +4,16 @@ var mqtt = require('mqtt')
 var client = mqtt.connect('mqtt://192.168.1.28');
 
 // Heads up!!! To get the sensor ID to use, you need to check what the 1-wire ID of your connected sensor is first.
-// Do this with ---->   ls /sys/bus/w1/devices/
+
+// First, sudo nano /boot/config.txt and add this line somewhere in the file:
+// dtoverlay=w1-gpio
+
+// Then, sudo reboot
+
+// Finally, ls /sys/bus/w1/devices/  to see the 1-wire IDs of the connected sensors.
 
 // Copy the xx-xxxxxxxxxxxx value and put it here:
-let deviceID = '28-01192e131195';
+const deviceID = '28-01192e131195';
 
 
 
