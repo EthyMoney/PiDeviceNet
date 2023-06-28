@@ -55,7 +55,7 @@ var rpio = require('rpio');
 rpio.init({gpiomem: true});   // You may need to switch this to the devmem pool when using PWM and i2c
 rpio.init({mapping: 'gpio'}); 
 const raspi = require('raspi');
-const pwm = require('raspi-pwm');
+const pwm = require('raspi-soft-pwm');
 
 var mqtt = require('mqtt')
 var client = mqtt.connect('mqtt://192.168.1.28')
@@ -112,7 +112,7 @@ function reportStatus(){
 
 function setDutyCycle(duty){
     raspi.init(() => {
-        const led = new pwm.PWM({'pin': PWMvrm, 'frequency': 2500}); // GPIO pin 12, 2.5 KHz PWM frequency
+        const led = new pwm.SoftPWM({'pin': PWMvrm, 'frequency': 2500}); // GPIO pin 12, 2.5 KHz PWM frequency
         led.write(duty);
       });
 }
