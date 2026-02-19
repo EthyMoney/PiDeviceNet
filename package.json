@@ -13,7 +13,7 @@
     "chalk": "^4.1.2",
     "ds18b20": "^0.1.0",
     "johnny-five": "^2.1.0",
-    "mqtt": "^4.3.7",
+    "mqtt": "^5.15.0",
     "node-dht-sensor": "^0.4.3",
     "node-schedule": "^2.1.1",
     "raspi": "^6.0.1",
